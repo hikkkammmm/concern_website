@@ -75,6 +75,7 @@
             </td>
             <td class="px-5 py-4 hidden xl:table-cell text-gray-400">05 Jan 2026</td>
             <td class="px-5 py-4 text-right text-sm">
+              
               <button class="text-indigo-400 hover:text-indigo-300 mr-3">Edit</button>
               <button class="text-red-400 hover:text-red-300">Hapus</button>
             </td>

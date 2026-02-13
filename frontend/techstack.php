@@ -44,6 +44,7 @@
         <p class="text-sm text-slate-400 text-center">Cloud & deployment</p>
       </div>
 
+
       <!-- Tambah lagi sesuai kebutuhan, misal Docker, Tailwind, LangChain untuk AI, dll -->
     </div>
   </div>

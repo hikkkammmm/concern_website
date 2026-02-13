@@ -126,3 +126,86 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render awal
   renderTable();
 });
+
+// assets/js/admin.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('crud-modal');
+  const titleEl = document.getElementById('modal-title');
+  const form = document.getElementById('crud-form');
+  const typeInput = document.getElementById('crud-type');
+  const actionInput = document.getElementById('crud-action');
+  const idInput = document.getElementById('crud-id');
+  const closeBtn = document.getElementById('modal-close');
+  const cancelBtn = document.getElementById('modal-cancel');
+
+  // Fungsi buka modal
+  function openModal(type, action = 'add', data = {}) {
+    typeInput.value = type;
+    actionInput.value = action;
+
+    // Reset form
+    form.reset();
+    document.querySelectorAll('#portfolio-fields, #news-fields, #tech-fields').forEach(el => el.classList.add('hidden'));
+
+    if (type === 'portfolio') {
+      titleEl.textContent = action === 'add' ? 'Tambah Project Baru' : 'Edit Project';
+      document.getElementById('portfolio-fields').classList.remove('hidden');
+      if (action === 'edit') {
+        document.getElementById('p-title').value = data.title || '';
+        document.getElementById('p-description').value = data.description || '';
+        document.getElementById('p-image').value = data.imageUrl || '';
+        document.getElementById('p-tags').value = (data.tags || []).join(', ');
+        // Preview gambar
+        if (data.imageUrl) {
+          document.getElementById('p-preview').classList.remove('hidden');
+          document.getElementById('p-preview-img').src = data.imageUrl;
+        }
+      }
+    } else if (type === 'news') {
+      titleEl.textContent = action === 'add' ? 'Tambah Berita Baru' : 'Edit Berita';
+      document.getElementById('news-fields').classList.remove('hidden');
+      if (action === 'edit') {
+        // Isi field news...
+      }
+    } else if (type === 'techstack') {
+      titleEl.textContent = action === 'add' ? 'Tambah Teknologi Baru' : 'Edit Teknologi';
+      document.getElementById('tech-fields').classList.remove('hidden');
+      if (action === 'edit') {
+        // Isi field tech...
+      }
+    }
+
+    modal.classList.remove('hidden');
+  }
+
+  // Tutup modal
+  closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+  cancelBtn.addEventListener('click', () => modal.classList.add('hidden'));
+  modal.addEventListener('click', e => {
+    if (e.target === modal) modal.classList.add('hidden');
+  });
+
+  // Contoh: tombol tambah portfolio di halaman
+  document.getElementById('btn-add-portfolio')?.addEventListener('click', () => {
+    openModal('portfolio', 'add');
+  });
+
+  // Submit form (nanti connect ke backend)
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Data disimpan! (Implementasi backend nanti ya)');
+    modal.classList.add('hidden');
+  });
+
+  // Preview gambar portfolio
+  document.getElementById('p-image')?.addEventListener('input', e => {
+    const url = e.target.value;
+    if (url) {
+      document.getElementById('p-preview').classList.remove('hidden');
+      document.getElementById('p-preview-img').src = url;
+    } else {
+      document.getElementById('p-preview').classList.add('hidden');
+    }
+  });
+});

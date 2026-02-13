@@ -91,6 +91,9 @@
  
     <!-- about us -->
     <?php include 'about.php'; ?>
+<!-- 
+    services -->
+    <?php include 'services.php'; ?>
 
     <!-- ================= PROSES KERJA ================= -->
     <section class="py-16 px-6 bg-concern-dark">
@@ -192,6 +195,9 @@
      <!-- portofolio -->
 
      <?php include 'portofolio.php'; ?>
+
+    <!-- ================= CONTACT SECTION ================= -->
+     <?php include 'contact.php'; ?>
 
         <!-- ================= FOOTER ================= -->
      <?php include 'includes/footer.php'; ?>

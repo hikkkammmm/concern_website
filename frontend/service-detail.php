@@ -89,7 +89,7 @@
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 
                         bg-concern-accent text-slate-900 
                         px-6 py-2 text-sm font-bold rounded-full shadow-lg">
-            PALING POPULER
+            best seller
             </div>
 
             <div class="mb-8 mt-4">

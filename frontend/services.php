@@ -118,7 +118,7 @@
                 shadow-2xl shadow-cyan-900/40
                 transform hover:scale-105">
 
-        Lihat Detail Paket Layanan
+        lihat detail
 
         <svg class="w-6 h-6 transition-transform group-hover:translate-x-1"
              fill="none" stroke="currentColor" viewBox="0 0 24 24">
